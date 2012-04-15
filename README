@@ -1,0 +1,25 @@
+====================
+repoweb.cgi
+====================
+
+Description:
+Ce script cgi permet de générer une page web listant les fichiers à télécharger
+dans une arboscence donnée. 
+
+Pré-requis:
+Le support des scripts cgi doit être autoriser au niveau de la configuration du 
+serveur web.
+
+Exemple sous Apache avec la création d'un virtual Host dédié : 
+
+ <VirtualHost *:80>
+  DocumentRoot /Repoweb
+  <Directory /Repoweb>
+     DirectoryIndex repoweb.cgi
+     AllowOverride None
+     Order allow,deny
+     Allow from all
+     Options +ExecCGI
+     AddHandler cgi-script .cgi
+  </Directory>
+ </VirtualHost>
